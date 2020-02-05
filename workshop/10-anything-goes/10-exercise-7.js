@@ -13,9 +13,18 @@
 
 function map(lst, func) {
     // lst is an array and func is a function
-
+    let answer = [];
+    let index = 0;
+    lst.forEach(function (element) {
+        answer[index] = func(element);
+        index++;
+    })
+    return answer;
 }
 // -------------------------------------------------------------------------
 function charCount(str) { return str.length };
-console.log('Q7: ', map(['Cyborg', 'Robin', 'Batman', 'Superman', 'Aquaman', 'Flash'], charCount));
-console.log('Q7: ', map(['Scott', 'Bob', 'Ric', 'Jim'], charCount));
+function toUpperCase(str) {return str.toUpperCase()}
+function toLowerCase(str) {return str.toLowerCase()}
+console.log('Q7: ', map(['Cyborg', 'Robin', 'Batman', 'Superman', 'Aquaman', 'Flash'], toUpperCase));
+console.log('Q7: ', map(['Scott', 'Bob', 'Ric', 'Jim'], toLowerCase));
+console.log('Q7c: ', map(['dog', 'cat', 'horse', 'elephant'], charCount));

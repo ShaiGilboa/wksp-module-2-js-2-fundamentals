@@ -16,19 +16,19 @@ For example, all objects have `toString` and `valueOf` methods.
 
 ```js
 let num = 3;
-num.toString();
+num.toString(); // '3'
 
 let bool = true;
-bool.toString();
+bool.toString();    //'true'
 
 let str = 'hello';
-str.toString();
+str.toString();     //'hello'
 
 let arr = [1, 2, 'three'];
-arr.toString();
+arr.toString();     //'1,2,three'  // valueOf [1, 2, 'three']
 
 let dip = {value: 3};
-dip.toString();
+dip.toString();  // '[object Object]' // valueOF {value: 3}
 ```
 
 Let's look at the examples above again using `valueOf`.
@@ -109,6 +109,9 @@ The `.concat()` method is used to join two or more strings.
 let partOne = 'Do or do not.';
 let partTwo = 'There is no try.';
 
+const version1 = partOne.concat(partTwo)
+const version2 = `${partOne} ${partTwo}`
+const version3 = partOne + partTwo
 ```
 
 ---
@@ -121,6 +124,16 @@ The `.split()` method "split" a string into an array of _substrings_.
 // Example
 const truth = 'The greatest teacher, failure is.';
 
+truth.split('') // Array(33) [ "T", "h", "e", " ", "g", "r", "e", "a", "t", "e", … ]
+
+truth.split(' ') // Array(5) [ "The", "greatest", "teacher,", "failure", "is." ]
+
+truth.split('e') // Array(7) [ "Th", " gr", "at", "st t", "ach", "r, failur", " is." ]
+
+
+truth.split(4) // Array [ "The greatest teacher, failure is." ]
+
+.split() cuts away the value that used as reference
 ```
 
 ---
@@ -134,7 +147,8 @@ This method returns -1 if the value to search for never occurs.
 ```js
 // Example
 let yodaSpeak = "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.";
-
+yodaSpeak.indexOf('Anger') //56
+yodaSpeak.indexOf('q') // -1 // that the equivalent of 'was not found'
 ```
 
 _Why would JavaScript decide to return `-1` instead of some other value? like `0`?_

@@ -8,7 +8,11 @@
 // Otherwise returns false.
 function allLong(lst) {
     // lst is an array of strings
-
+    return (
+    lst.every(function (element) {
+        return element.length >= 5;
+    })
+    )
 }
 // -------------------------------------------------------------------------
 console.log('Q8 - case 1', allLong(['Scott', 'Bob', 'Ric', 'Jim']));

@@ -16,8 +16,30 @@
 // See this site for a list of "narcissistic" numbers
 // http://mathworld.wolfram.com/NarcissisticNumber.html
 
-function identifyArmstrongNumbers(num1, num2) {
 
+function checkArmstrong (number) {
+
+    let length = ((number.toString()).length);
+    let sum = 0;
+    for (let index = 0; index < length; index ++) {
+
+        sum = sum + (Math.pow(number.toString()[index],length));
+    }
+    if (sum === number) {
+
+        return number;
+    }
+    return -1;
 }
 
-console.log(identifyArmstrongNumbers(100, 99999));
+function identifyArmstrongNumbers(num1, num2) {
+    let armNumbers= [];
+    for (i=num1; i<num2; i++) {
+        if (checkArmstrong(i)!==-1) {
+            armNumbers.push(i);
+        }
+    }
+    return armNumbers;
+}
+
+console.log(identifyArmstrongNumbers(1000, 1000000));

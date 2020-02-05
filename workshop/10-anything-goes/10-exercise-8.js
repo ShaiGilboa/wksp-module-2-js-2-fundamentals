@@ -16,8 +16,28 @@
 function filter(lst, func) {
     // lst is an array and f is a function
     // func takes one argument and returns a boolean (true or false)
-
+    let answer = [];
+    lst.forEach(function (element) {
+        if (func(element)) {
+            answer.push(element);
+        }
+    })
+    return answer;
 }
 // -------------------------------------------------------------------------
 function keepLong(str) { return str.length > 5 }
+function isEven(x) {return x % 2 === 0;}
+function checkArmstrong (number) {
+    let length = (number.toString()).length;
+    let sum = 0;
+    for (let index = 0; index < length; index ++) {
+        sum = sum + (Math.pow(number.toString()[index],3));
+    }
+    if (sum === number) {
+        return true;
+    }
+    return false;
+}
 console.log('Q8: ', filter(['Cyborg', 'Robin', 'Batman', 'Superman', 'Aquaman', 'Flash'], keepLong));
+console.log('Q8b: ', filter([1,2,3,4,5,6,7,8,'y',9,10,'g',true], isEven));
+console.log('Q8c: ', filter([1,2,3,4,5,6,7,8,9,370,371,369,], checkArmstrong));

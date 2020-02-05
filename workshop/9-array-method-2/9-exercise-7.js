@@ -10,7 +10,15 @@
   
 function greetLong(lst) {
     // lst is an array of strings
-
+    let above5 = lst.filter(function (number) {
+        return number.length>=4;
+    })
+    let answer=[];
+    above5.forEach(function (element) {
+        element = 'Hello ' + element;
+        answer.push(element);
+    })
+    return answer;
 }
 // -------------------------------------------------------------------------
-console.log('Q7 greetLong()', greetLong(['Scott', 'Bob', 'Ric', 'Jim']));
+console.log('Q7 greetLong()', greetLong(['Scott', 'Bob', 'Ric', 'Jim', 'daniel']));

@@ -9,7 +9,12 @@
 
 function greet(lst) {
     // lst is an array of strings
-
+    let answer = [];
+    lst.forEach(function (element) {
+        element = 'Hello ' + element;
+        answer.push(element);
+    })
+    return answer;
 }
 // -------------------------------------------------------------------------
-console.log('Q6 greet()', greet(['David', 'Billy', 'Lisa', 'Jennifer']));
+console.log('Q6 greet()', greet(['David', 'Billy', 'Lisa', 'Jennifer', '', '35 23 ']));

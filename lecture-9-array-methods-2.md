@@ -10,7 +10,7 @@
 - `.forEach()`
 - `.map()`
 - `.filter()`
-- `every()`
+- `.every()`
 
 ---
 
@@ -24,6 +24,7 @@ const words = ['The', 'large', 'shaggy', 'dog', 'barked', 'at', 'the', 'silence'
 
 words.forEach(function(word) {
     // do something
+
 });
 
 ```
@@ -40,7 +41,7 @@ const words = ['The', 'large', 'shaggy', 'dog', 'barked', 'at', 'the', 'silence'
 
 const newWords = words.map(function(word) {
     return word.toUpperCase();
-});
+}); //Array(8) [ "THE", "LARGE", "SHAGGY", "DOG", "BARKED", "AT", "THE", "SILENCE" ]
 
 ```
 
@@ -56,7 +57,7 @@ const words = ['The', 'large', 'shaggy', 'dog', 'barked', 'at', 'the', 'silence'
 
 words.filter(function(word) {
     return word.length < 4;
-});
+}); //Array(4) [ "The", "dog", "at", "the" ]
 
 ```
 
@@ -72,9 +73,9 @@ It returns `true` or `false`.
 // Example
 const words = ['The', 'large', 'shaggy', 'dog', 'barked', 'at', 'the', 'silence'];
 
-words.filter(function(word) {
+words.every(function(word) {
     return word.length < 4;
-});
+});  //false - becasue there is at least one element for which .length is >= 4
 
 ```
 
